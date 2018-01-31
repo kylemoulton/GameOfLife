@@ -11,7 +11,6 @@ const tileStyle = {
 
 class LifeTile extends Component {
     render() {
-        console.log(this.props);
         const isAlive = this.props.grid[this.props.initialCell.coordX][this.props.initialCell.coordY].isAlive;
         const tileColor = isAlive ? "green" : "white";
         return <div style={{...tileStyle, backgroundColor: tileColor}} />;

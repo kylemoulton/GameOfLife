@@ -1,11 +1,10 @@
-import { CREATE_GRID } from './types';
+import { CREATE_GRID, PROCESS_NEXT_GENERATION } from './types';
 
 export const createGrid = (x, y) => {
     const grid = new Array(x);
     for (let i = 0; i < x; i++) {
         grid[i] = new Array(y);
     }
-
     for (let i = 0; i < x; i++) {
         for (let j = 0; j < y; j++) {
             grid[i][j] = {
@@ -15,6 +14,9 @@ export const createGrid = (x, y) => {
             };
         }
     }
-
     return { type: CREATE_GRID, payload: grid };
+}
+
+export const processNextGeneration = () => {
+    return { type: PROCESS_NEXT_GENERATION };
 }

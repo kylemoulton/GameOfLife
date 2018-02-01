@@ -25,10 +25,15 @@ class LifeGrid extends Component {
         });
       }
 
-
     render() {
+        let minimumHeight = 0;
+        let minimumWidth = 0;
+        if (this.props.grid != null) {
+          minimumHeight = (this.props.grid.length * 27).toString() + "px";
+          minimumWidth = (this.props.grid[0].length * 27).toString() + "px";          
+        }
         return (
-            <div className="container" style={{textAlign: "center", marginTop: "50px"}}>
+          <div className="container" style={{textAlign: "center", marginTop: "50px", minHeight: minimumHeight, minWidth: minimumWidth}}>
             {this.renderGrid()}
         </div>
         );
